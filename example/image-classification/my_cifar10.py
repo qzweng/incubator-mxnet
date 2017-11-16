@@ -86,6 +86,7 @@ if __name__ == '__main__':
         num_epochs     = 300,
         lr             = .05,
         lr_step_epochs = '200,250',
+        kvstore        = 'dist_sync',
     )
     args = parser.parse_args()
 
