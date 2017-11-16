@@ -60,7 +60,7 @@ if __name__ == '__main__':
     import time
     from sklearn.model_selection import train_test_split
 
-    kv_store = mx.kv.create('dist_sync')
+    # This step is done in fit(): kv_store = mx.kv.create('dist_sync')
     
     # parse args
     parser = argparse.ArgumentParser(description="train cifar10",
@@ -85,7 +85,7 @@ if __name__ == '__main__':
         num_epochs     = 300,
         lr             = .05,
         lr_step_epochs = '200,250',
-        kvstore        = 'dist_sync',
+        kv_store        = 'dist_sync',
     )
     args = parser.parse_args()
 
