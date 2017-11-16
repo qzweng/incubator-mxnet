@@ -60,9 +60,6 @@ if __name__ == '__main__':
     import time
     from sklearn.model_selection import train_test_split
 
-    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s WORKER1 %(message)s')
-    # logging.basicConfig(level=logging.DEBUG, format='%(asctime)s WORKER2 %(message)s')
-
     kv_store = mx.kv.create('dist_sync')
     
     # parse args
