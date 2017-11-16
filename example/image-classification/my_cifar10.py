@@ -18,7 +18,10 @@
 import os
 import argparse
 import logging
-logging.basicConfig(level=logging.DEBUG)
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s WORKER1 %(message)s')
+# logging.basicConfig(level=logging.DEBUG, format='%(asctime)s WORKER2 %(message)s')
+
 from common import find_mxnet, data, fit
 from common.util import download_file
 import mxnet as mx
@@ -61,7 +64,6 @@ if __name__ == '__main__':
     # logging.basicConfig(level=logging.DEBUG, format='%(asctime)s WORKER2 %(message)s')
 
     kv_store = mx.kv.create('dist_sync')
-    
     
     # parse args
     parser = argparse.ArgumentParser(description="train cifar10",
